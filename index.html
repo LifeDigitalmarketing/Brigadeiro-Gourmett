@@ -3,291 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-book Brigadeiro Gourmet | Oferta de Páscoa</title>
+  <title>Brigadeiro Gourmet</title>
 
-  <!-- Pré-carregamento elegante -->
-  <style>
-    #preloader {
-      position: fixed;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      z-index: 9999;
-      background: #fff url('https://i.gifer.com/ZZ5H.gif') no-repeat center center;
-      background-size: 80px 80px;
-    }
-    body.loaded #preloader {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease;
-    }
-  </style>
-
-  <!-- AOS Library para animações de scroll -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Fonte elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    header {
+      background-color: #000;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: white;
       text-align: center;
-      padding: 40px 20px 10px;
-      background: url('fundotext1.jpg') no-repeat center/cover;
     }
-    header img {
-      width: 150px;
-    }
-    .headline {
-      font-size: 36px;
-      font-weight: bold;
-      margin-top: 20px;
-      color: #333;
-    }
-    .subheadline {
-      font-size: 20px;
-      margin: 10px 0 30px;
-      color: #555;
-    }
-    .vsl {
-      margin: 0 auto;
-      width: 90%;
-      max-width: 600px;
-      padding: 20px 0;
-    }
-    .vsl iframe {
-      width: 100%;
-      height: 340px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-    .storytelling {
-      max-width: 800px;
-      margin: 40px auto;
-      font-size: 18px;
-      color: #444;
-      text-align: center;
-      padding: 0 20px;
-    }
-    section {
-      padding: 60px 20px;
+
+    .topo {
+      background: url('B-GOURMET-TOPO.jpg') no-repeat center center;
       background-size: cover;
-      background-position: center;
+      padding: 50px 20px 20px;
+      position: relative;
     }
-    .benefits, .who-for, .testimonials, .offer, .faq {
-      background: #f9f9f9;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 1000px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+    .logo {
+      width: 300px;
+      max-width: 90%;
+      margin: 0 auto 20px;
+      display: block;
+      animation: fadeInDown 1.5s ease-out;
     }
-    .section-title {
-      text-align: center;
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #333;
+
+    h1.headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin: 30px 0 10px;
+      animation: fadeInUp 1.5s ease-out;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
+
+    h1.headline span {
+      color: #ffc107;
     }
-    ul li {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #555;
-    }
-    .btn {
-      display: inline-block;
-      background: #FF6B00;
-      color: #fff;
+
+    h2 {
       font-size: 20px;
-      padding: 15px 30px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin-top: 20px;
-      transition: 0.3s;
+      font-weight: normal;
+      margin: 20px 20px 30px;
+      color: #ccc;
+      animation: fadeInUp 2s ease-out;
     }
-    .btn:hover {
-      background: #e55d00;
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 30px auto;
+      border: 4px solid #ffc107;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #000;
     }
-    .countdown {
-      text-align: center;
-      font-size: 28px;
-      margin: 20px 0;
+
+    .video-thumbnail {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      display: block;
+    }
+
+    .video-container {
+      display: none;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .garantias {
+      margin: 40px 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .garantias img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .botao-compra {
+      background: linear-gradient(90deg, #FFD700, #FFC300);
+      color: black;
+      padding: 18px 35px;
+      margin: 40px auto;
+      display: inline-block;
+      font-size: 20px;
       font-weight: bold;
-      color: #D7263D;
+      text-decoration: none;
+      border-radius: 50px;
+      animation: pulse 2s infinite;
     }
-    .faq-item {
-      border-bottom: 2px solid #FFD700;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
+
+    /* Animações premium */
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-      color: #777;
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,193,7, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(255,193,7, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,193,7, 0); }
     }
   </style>
-
 </head>
 
 <body>
 
-<div id="preloader"></div>
+  <div class="topo">
+    <img src="LOGO-BRIGADEIRO-768x370.png" alt="Brigadeiro Gourmet" class="logo">
+
+    <h1 class="headline">
+      Transforme sua <span>Páscoa</span> com receitas incríveis!
+    </h1>
+
+    <h2>Aprenda a trabalhar em casa fazendo brigadeiros gourmet e <span style="color:#ffc107;">lucre muito</span> com esse mercado! <strong>Com esse E-Book você vai descobrir o segredo.</strong></h2>
+
+    <!-- VSL -->
+    <div class="video-wrapper" id="videoWrapper">
+      <img src="CAPA-VIDEO-VSL.jpg" alt="Assistir Vídeo" class="video-thumbnail" id="videoThumbnail">
+      <div class="video-container" id="videoContainer">
+        <iframe src="https://player.vimeo.com/video/1075760354?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="garantias">
+      <img src="ICONES-REGUA-1-1.png" alt="Garantia, Acesso Imediato, Pagamento Seguro">
+    </div>
+
+    <a href="COLOQUE_AQUI_O_LINK_DE_COMPRA" class="botao-compra">
+      QUERO COMPRAR AGORA O MEU E-BOOK
+    </a>
+  </div>
 
 <script>
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+  const thumbnail = document.getElementById('videoThumbnail');
+  const container = document.getElementById('videoContainer');
+  thumbnail.addEventListener('click', function() {
+    thumbnail.style.display = 'none';
+    container.style.display = 'block';
   });
-</script>
-
-<header data-aos="fade-in">
-  <img src="LOGO-BRIGADEIRO-768x370.png" alt="Logo Brigadeiro Gourmet">
-  <h1 class="headline">Transforme a Sua Páscoa em Lucro!</h1>
-  <p class="subheadline">Aprenda a fazer e vender Brigadeiros Gourmet de forma fácil e lucrativa.</p>
-
-  <div class="vsl">
-    <iframe src="https://player.vimeo.com/video/1075760354?h=yourid" allow="autoplay; fullscreen"></iframe>
-  </div>
-</header>
-
-<div class="storytelling" data-aos="fade-up">
-  Imagine ganhar dinheiro vendendo doces irresistíveis, sem sair de casa e com total liberdade.  
-  Com nosso guia completo, você transforma paixão em lucro e ainda aproveita a melhor época do ano para faturar alto!
-</div>
-<!-- Seção 2 - Benefícios -->
-<section style="background-image: url('fotofundo2.jpg');" data-aos="fade-up">
-  <div class="benefits">
-    <h2 class="section-title">O que você vai receber neste e-book brigadeiro gourmet:</h2>
-    <ul>
-      <li>O que é brigadeiro gourmet?</li>
-      <li>Itens essenciais para a produção de brigadeiros;</li>
-      <li>Quanto você pode ganhar vendendo brigadeiros gourmet;</li>
-      <li>As melhores receitas de brigadeiro gourmet;</li>
-      <li>Mais de 20 receitas deliciosas para você aprender e ganhar dinheiro;</li>
-      <li>Como precificar seus brigadeiros corretamente.</li>
-      <li>E muito mais...</li>
-    </ul>
-    <a href="#checkout" class="btn">Garanta o seu agora</a>
-  </div>
-</section>
-
-<!-- Seção 3 - Para quem é -->
-<section style="background-image: url('fotofundo3.jpg');" data-aos="fade-up">
-  <div class="who-for">
-    <h2 class="section-title">Quem precisa deste guia completo?</h2>
-    <ul>
-      <li>Para quem está desempregado/a e precisa de uma renda extra.</li>
-      <li>Para quem deseja ser seu próprio chefe.</li>
-      <li>Para quem quer trabalhar no conforto de sua casa.</li>
-      <li>Para pessoas que não sabem fazer brigadeiros gourmet.</li>
-      <li>Para quem não tem ideia de como vender brigadeiros gourmet.</li>
-    </ul>
-    <p style="text-align:center; margin-top:20px;">No geral, este produto é para todos que desejam empreender e ter uma renda extra!</p>
-  </div>
-</section>
-
-<!-- Seção 4 - Depoimentos -->
-<section style="background-image: url('fotofundo4.jpg');" data-aos="fade-up">
-  <div class="testimonials">
-    <h2 class="section-title">Confira o que nossos clientes estão falando:</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-      <img src="PRINT-FEEDBACK-1.jpg" alt="Feedback 1" style="width: 250px; border-radius: 15px;">
-      <img src="PRINT-FEEDBACK-2.jpg" alt="Feedback 2" style="width: 250px; border-radius: 15px;">
-      <img src="PRINT-FEEDBACK-3.jpg" alt="Feedback 3" style="width: 250px; border-radius: 15px;">
-    </div>
-  </div>
-</section>
-
-<!-- Seção 5 - Oferta Especial -->
-<section style="background-image: url('IMAGEM-FUNDO-OFERTA.jpg');" data-aos="fade-up">
-  <div class="offer">
-    <h2 class="section-title">Oferta Especial de Páscoa!</h2>
-    <p style="text-align:center; font-size:18px;">Promoção encerra em poucos minutos.</p>
-
-    <!-- Temporizador Real -->
-    <div class="countdown" id="countdown"></div>
-
-    <img src="IMG-B-GOURMET-03-768x768.webp" alt="Mockup Promo" style="width:300px; margin:20px auto; display:block;">
-    <p style="text-align:center; font-size:24px; font-weight:bold; color:#333;">De <s>R$147,90</s> por apenas <span style="color:#FF6B00;">R$29,90</span></p>
-
-    <a href="#checkout" class="btn">Comprar Agora</a>
-
-    <div style="margin-top:30px; display:flex; flex-wrap: wrap; justify-content:center; gap:20px;">
-      <img src="ICONES-REGUA-1-1.png" alt="Garantia" style="width:150px;" 
-    </div>
-  </div>
-</section>
-
-<!-- Seção 6 - FAQ -->
-<section style="background-image: url('IMAGEM-FUNDO-FAQ.jpg');" data-aos="fade-up">
-  <div class="faq">
-    <h2 class="section-title">Dúvidas Frequentes</h2>
-
-    <div class="faq-item">
-      <p><strong>O acesso é imediato?</strong></p>
-      <p>Sim, após a confirmação do pagamento você recebe o acesso instantaneamente.</p>
-    </div>
-
-    <div class="faq-item">
-      <p><strong>É seguro comprar?</strong></p>
-      <p>100%! Usamos plataformas de pagamento certificadas e seguras.</p>
-    </div>
-
-    <div class="faq-item">
-      <p><strong>Preciso ter experiência prévia?</strong></p>
-      <p>Não! O material foi criado para iniciantes e para quem deseja se especializar.</p>
-    </div>
-
-    <div class="faq-item">
-      <p><strong>Tem garantia?</strong></p>
-      <p>Sim! Você tem 7 dias de garantia para pedir reembolso se não gostar.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <img src="LOGO-BRIGADEIRO-768x370.png" alt="Logo Footer" style="width: 100px;">
-  <p>Termos de Uso | Política de Privacidade</p>
-</footer>
-
-<!-- Script do Temporizador -->
-<script>
-  function startCountdown(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-      minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      display.textContent = minutes + ":" + seconds;
-
-      if (--timer < 0) {
-        timer = 0;
-      }
-    }, 1000);
-  }
-
-  window.onload = function () {
-    var fiveMinutes = 5 * 60,
-        display = document.getElementById('countdown');
-    startCountdown(fiveMinutes, display);
-
-    AOS.init({
-      duration: 1200,
-      once: true
-    });
-  };
 </script>
 
 </body>
