@@ -527,7 +527,9 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: url('B-GOURMET-BLOCO-PRECO.jpgI') no-repeat center center/cover;
+      background: url('B-GOURMET-BLOCO-PRECO.jpg') no-repeat center center/cover;
+      background-color: #000; /* fallback */
+      background-size: cover;
       color: #fff;
       overflow-x: hidden;
     }
@@ -563,18 +565,35 @@
     .timer {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 10px;
       margin-bottom: 20px;
     }
     .timer-box {
       background: #FFD700;
       color: #000;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
-      padding: 10px 20px;
+      padding: 10px;
       border-radius: 10px;
       min-width: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       animation: bounce 2s infinite;
+    }
+    .timer-box span.time {
+      font-size: 24px;
+    }
+    .timer-box span.label {
+      font-size: 12px;
+      margin-top: 5px;
+      font-weight: 600;
+    }
+    .timer-separator {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFD700;
     }
     .price-old {
       font-size: 18px;
@@ -584,14 +603,14 @@
     }
     .price-new {
       font-size: 36px;
-      color: #00ff99;
+      color: #FFD700;
       font-weight: 700;
       margin-bottom: 20px;
     }
     .btn-comprar, .btn-previa {
       display: inline-block;
-      background: #FF8C00;
-      color: white;
+      background: #FFD700;
+      color: #000;
       font-size: 18px;
       font-weight: 600;
       padding: 15px 30px;
@@ -601,7 +620,7 @@
       transition: all 0.3s ease;
     }
     .btn-comprar:hover, .btn-previa:hover {
-      background: #ffa500;
+      background: #ffea00;
       transform: scale(1.05);
     }
     .icons img {
@@ -653,9 +672,20 @@
     <div class="offer-subtitle">Promoção encerra em poucos minutos</div>
 
     <div class="timer">
-      <div class="timer-box" id="hours">01</div>
-      <div class="timer-box" id="minutes">15</div>
-      <div class="timer-box" id="seconds">00</div>
+      <div class="timer-box">
+        <span class="time" id="hours">01</span>
+        <span class="label">Horas</span>
+      </div>
+      <div class="timer-separator">:</div>
+      <div class="timer-box">
+        <span class="time" id="minutes">15</span>
+        <span class="label">Minutos</span>
+      </div>
+      <div class="timer-separator">:</div>
+      <div class="timer-box">
+        <span class="time" id="seconds">00</span>
+        <span class="label">Segundos</span>
+      </div>
     </div>
 
     <div class="price-old">De R$147,90 por apenas:</div>
@@ -665,7 +695,7 @@
     <a href="#previa" class="btn-previa">Baixar Prévia Gratuita</a>
 
     <div class="icons">
-      <img src="ICONES-REGUA-1-1.png" alt="Ícones de Garantia, Pagamento Seguro, etc.">
+      <img src="SICONES-REGUA-1-1.png" alt="Ícones de Garantia, Pagamento Seguro, etc.">
     </div>
 
   </div>
@@ -683,26 +713,30 @@
 
 <!-- SCRIPT do Timer -->
 <script>
-  let totalSeconds = (1 * 3600) + (15 * 60); // 1 hora e 15 minutos
-  const hoursBox = document.getElementById('hours');
-  const minutesBox = document.getElementById('minutes');
-  const secondsBox = document.getElementById('seconds');
+  function startTimer(duration) {
+    let timer = duration, hours, minutes, seconds;
+    setInterval(function () {
+      hours = parseInt(timer / 3600, 10);
+      minutes = parseInt((timer % 3600) / 60, 10);
+      seconds = parseInt(timer % 60, 10);
 
-  function updateTimer() {
-    let hours = Math.floor(totalSeconds / 3600);
-    let minutes = Math.floor((totalSeconds % 3600) / 60);
-    let seconds = totalSeconds % 60;
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    hoursBox.textContent = String(hours).padStart(2, '0');
-    minutesBox.textContent = String(minutes).padStart(2, '0');
-    secondsBox.textContent = String(seconds).padStart(2, '0');
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
 
-    if (totalSeconds > 0) {
-      totalSeconds--;
-      setTimeout(updateTimer, 1000);
-    }
+      if (--timer < 0) {
+        timer = duration; // reinicia se quiser loop
+      }
+    }, 1000);
   }
-  updateTimer();
+  window.onload = function () {
+    const oneHourFifteenMin = 4500; // 1h15min em segundos
+    startTimer(oneHourFifteenMin);
+  };
 </script>
 
 </body>
