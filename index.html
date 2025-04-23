@@ -513,3 +513,94 @@
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init();</script>
+
+<!-- SEÇÃO 5 - OFERTA ESPECIAL COM CONTAGEM REGRESSIVA -->
+<section class="relative bg-black py-16 overflow-hidden" style="background-image: url('B-GOURMET-BLOCO-PRECO.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+
+    <!-- Mockup do Produto -->
+    <div data-aos="fade-up" data-aos-duration="1200" class="mb-10 flex justify-center">
+      <img src="IMG-B-GOURMET-03-768x768.webp" alt="E-Book Brigadeiro Gourmet" class="w-72 md:w-96 rounded-lg shadow-2xl">
+    </div>
+
+    <!-- Oferta Especial -->
+    <div class="bg-black bg-opacity-70 p-8 rounded-3xl shadow-2xl" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">OFERTA ESPECIAL</h2>
+      <p class="text-yellow-400 font-bold text-lg mb-6">PROMOÇÃO ENCERRA EM POUCOS MINUTOS</p>
+
+      <!-- Contagem Regressiva -->
+      <div id="contador" class="flex justify-center space-x-4 text-yellow-400 text-2xl font-bold mb-8">
+        <div><span id="horas">01</span><br><span class="text-sm text-white font-normal">Horas</span></div>
+        <div><span id="minutos">15</span><br><span class="text-sm text-white font-normal">Minutos</span></div>
+        <div><span id="segundos">00</span><br><span class="text-sm text-white font-normal">Segundos</span></div>
+      </div>
+
+      <!-- Preço -->
+      <p class="text-white text-lg line-through mb-1">De R$147,90</p>
+      <p class="text-yellow-400 text-4xl font-extrabold mb-6">Por apenas R$29,90</p>
+
+      <!-- Botões -->
+      <div class="flex flex-col items-center space-y-4">
+        <!-- Botão Comprar Agora -->
+        <a href="#comprar" class="inline-block bg-yellow-400 text-black text-lg font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition w-full max-w-xs">COMPRAR AGORA</a>
+        
+        <!-- Botão Baixar Prévia -->
+        <a href="preview-ebook.pdf" download class="inline-block border-2 border-yellow-400 text-yellow-400 text-lg font-bold py-3 px-8 rounded-full hover:bg-yellow-400 hover:text-black transition w-full max-w-xs">BAIXAR PRÉVIA</a>
+      </div>
+
+      <!-- Benefícios -->
+      <div class="flex justify-center mt-8">
+        <img src="ICONES-REGUA-1-1.png" alt="Benefícios Garantia Acesso Seguro" class="w-full max-w-md">
+      </div>
+
+    </div>
+
+    <!-- Selo de Segurança -->
+    <div class="flex justify-center mt-10">
+      <img src="SELO-BLOCO-08-3-768x768.png" alt="Selo de Segurança" class="w-36">
+    </div>
+
+  </div>
+
+  <!-- Botão WhatsApp Fixo -->
+  <a href="https://wa.me/+5541987256736" class="fixed bottom-6 right-6 z-50">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-14">
+  </a>
+</section>
+
+<!-- SCRIPT CONTAGEM REGRESSIVA -->
+<script>
+  let horas = 1;
+  let minutos = 15;
+  let segundos = 0;
+
+  function atualizarContador() {
+    if (segundos === 0) {
+      if (minutos === 0) {
+        if (horas === 0) {
+          clearInterval(intervalo);
+          return;
+        } else {
+          horas--;
+          minutos = 59;
+        }
+      } else {
+        minutos--;
+      }
+      segundos = 59;
+    } else {
+      segundos--;
+    }
+
+    document.getElementById('horas').textContent = String(horas).padStart(2, '0');
+    document.getElementById('minutos').textContent = String(minutos).padStart(2, '0');
+    document.getElementById('segundos').textContent = String(segundos).padStart(2, '0');
+  }
+
+  const intervalo = setInterval(atualizarContador, 1000);
+</script>
+
+<!-- BIBLIOTECA AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
