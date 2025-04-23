@@ -514,93 +514,167 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init();</script>
 
-<!-- SEÇÃO 5 - OFERTA ESPECIAL COM CONTAGEM REGRESSIVA -->
-<section class="relative bg-black py-16 overflow-hidden" style="background-image: url('B-GOURMET-BLOCO-PRECO.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-
-    <!-- Mockup do Produto -->
-    <div data-aos="fade-up" data-aos-duration="1200" class="mb-10 flex justify-center">
-      <img src="IMG-B-GOURMET-03-768x768.webp" alt="E-Book Brigadeiro Gourmet" class="w-72 md:w-96 rounded-lg shadow-2xl">
-    </div>
-
-    <!-- Oferta Especial -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-3xl shadow-2xl" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">OFERTA ESPECIAL</h2>
-      <p class="text-yellow-400 font-bold text-lg mb-6">PROMOÇÃO ENCERRA EM POUCOS MINUTOS</p>
-
-      <!-- Contagem Regressiva -->
-      <div id="contador" class="flex justify-center space-x-4 text-yellow-400 text-2xl font-bold mb-8">
-        <div><span id="horas">01</span><br><span class="text-sm text-white font-normal">Horas</span></div>
-        <div><span id="minutos">15</span><br><span class="text-sm text-white font-normal">Minutos</span></div>
-        <div><span id="segundos">00</span><br><span class="text-sm text-white font-normal">Segundos</span></div>
-      </div>
-
-      <!-- Preço -->
-      <p class="text-white text-lg line-through mb-1">De R$147,90</p>
-      <p class="text-yellow-400 text-4xl font-extrabold mb-6">Por apenas R$29,90</p>
-
-      <!-- Botões -->
-      <div class="flex flex-col items-center space-y-4">
-        <!-- Botão Comprar Agora -->
-        <a href="#comprar" class="inline-block bg-yellow-400 text-black text-lg font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition w-full max-w-xs">COMPRAR AGORA</a>
-        
-        <!-- Botão Baixar Prévia -->
-        <a href="preview-ebook.pdf" download class="inline-block border-2 border-yellow-400 text-yellow-400 text-lg font-bold py-3 px-8 rounded-full hover:bg-yellow-400 hover:text-black transition w-full max-w-xs">BAIXAR PRÉVIA</a>
-      </div>
-
-      <!-- Benefícios -->
-      <div class="flex justify-center mt-8">
-        <img src="ICONES-REGUA-1-1.png" alt="Benefícios Garantia Acesso Seguro" class="w-full max-w-md">
-      </div>
-
-    </div>
-
-    <!-- Selo de Segurança -->
-    <div class="flex justify-center mt-10">
-      <img src="SELO-BLOCO-08-3-768x768.png" alt="Selo de Segurança" class="w-36">
-    </div>
-
-  </div>
-
-  <!-- Botão WhatsApp Fixo -->
-  <a href="https://wa.me/+5541987256736" class="fixed bottom-6 right-6 z-50">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-14">
-  </a>
-</section>
-
-<!-- SCRIPT CONTAGEM REGRESSIVA -->
-<script>
-  let horas = 1;
-  let minutos = 15;
-  let segundos = 0;
-
-  function atualizarContador() {
-    if (segundos === 0) {
-      if (minutos === 0) {
-        if (horas === 0) {
-          clearInterval(intervalo);
-          return;
-        } else {
-          horas--;
-          minutos = 59;
-        }
-      } else {
-        minutos--;
-      }
-      segundos = 59;
-    } else {
-      segundos--;
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Especial - Brigadeiro Gourmet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#000000, #f1c40f);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
     }
+    .top-section {
+      padding: 20px;
+    }
+    .top-section img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+    .special-offer {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 0 20px;
+    }
+    .special-offer h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .special-offer p {
+      background: #f1c40f;
+      color: black;
+      font-weight: bold;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .countdown div {
+      background: #222;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .price {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .price strong {
+      font-size: 40px;
+      color: #f1c40f;
+    }
+    .btn-comprar {
+      background: #f1c40f;
+      color: #000;
+      font-weight: bold;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      display: inline-block;
+      margin: 15px 0;
+    }
+    .infos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .infos div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .garantia-section img {
+      width: 250px;
+      margin: 30px auto;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    .whatsapp-button img {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>  <div class="top-section">
+    <img src="IMG-B-GOURMET-03-768x768.webp" alt="Brigadeiro Gourmet">
+  </div>  <div class="special-offer">
+    <h1>OFERTA ESPECIAL</h1>
+    <p>PROMOÇÃO ENCERRA EM POUCOS MINUTOS</p><div class="countdown">
+  <div>
+    <span id="hours">01</span><br>Horas
+  </div>
+  <div>
+    <span id="minutes">15</span><br>Minutos
+  </div>
+  <div>
+    <span id="seconds">00</span><br>Segundos
+  </div>
+</div>
 
-    document.getElementById('horas').textContent = String(horas).padStart(2, '0');
-    document.getElementById('minutos').textContent = String(minutos).padStart(2, '0');
-    document.getElementById('segundos').textContent = String(segundos).padStart(2, '0');
+<div class="price">
+  De <s>R$147,99</s> por apenas<br>
+  <strong>R$29,90</strong>
+</div>
+
+<a href="URL_DO_LINK_DE_COMPRA" class="btn-comprar">COMPRAR AGORA</a>
+<br>
+<a href="URL_DO_DOWNLOAD" class="btn-comprar" style="background-color:#000;color:#f1c40f;">BAIXAR PRÉVIA</a>
+
+<div class="infos">
+  <div>✅ 7 dias de garantia
+  </div>
+  <div>✅ Acesso imediato
+  </div>
+  <div>✅ Pagamento 100% seguro
+  </div>
+</div>
+
+  </div>  <div class="garantia-section">
+    <img src="ICONES-REGUA-1-1.png" alt="Garantia">
+  </div>  <a class="whatsapp-button" href="https://wa.me/SEUNUMEROWHATSAPP">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a><script>
+// Cronômetro de 1h15m
+let countDownDate = new Date().getTime() + (75 * 60 * 1000);
+
+let x = setInterval(function() {
+  let now = new Date().getTime();
+  let distance = countDownDate - now;
+
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("hours").innerHTML = (hours < 10 ? "0" : "") + hours;
+  document.getElementById("minutes").innerHTML = (minutes < 10 ? "0" : "") + minutes;
+  document.getElementById("seconds").innerHTML = (seconds < 10 ? "0" : "") + seconds;
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("hours").innerHTML = "00";
+    document.getElementById("minutes").innerHTML = "00";
+    document.getElementById("seconds").innerHTML = "00";
   }
-
-  const intervalo = setInterval(atualizarContador, 1000);
-</script>
-
-<!-- BIBLIOTECA AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+}, 1000);
+</script></body>
+</html>
