@@ -173,81 +173,113 @@
 </html>
 
 <!-- Seção 2: Benefícios do E-book Brigadeiro Gourmet -->
-<section class="relative bg-cover bg-center bg-no-repeat py-20" style="background-image: url('B-GOURMET-BLOCO-02-1.jpg');">
+<section style="position: relative; background-image: url('B-GOURMET-BLOCO-02-1jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 20px;">
 
   <!-- Degradê em cima -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 120px; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);"></div>
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, black, transparent);"></div>
 
   <!-- Degradê embaixo -->
-  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to top, black, transparent);"></div>
 
   <!-- Conteúdo da seção -->
-  <div class="relative z-10 max-w-7xl mx-auto text-center text-white px-4">
+  <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
 
-    <!-- Mockup do E-book -->
-    <img src="IMG-B-GOURMET-01-768x768.png" alt="Mockup do E-book" style="max-width: 350px; width: 90%; margin: 0 auto 40px;">
+    <!-- Mockup do E-book MAIOR -->
+    <img src="IMG-B-GOURMET-01-768x768.png" alt="Mockup do E-book" style="max-width: 480px; width: 90%; margin-bottom: 40px;">
 
-    <!-- Título com copy 100/10 -->
-    <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-up" style="font-family: 'Playfair Display', serif;">
-      Descubra Como Criar Brigadeiros Gourmet Imbatíveis e Dominar o Mercado Ainda Nesta Páscoa!
-    </h2>
+    <!-- Título da seção -->
+    <h2 style="font-size: 38px; margin-bottom: 30px;">VEJA O QUE VOCÊ VAI RECEBER NESTE E-BOOK</h2>
 
     <!-- Lista de benefícios -->
-    <ul class="list-none mt-10 space-y-6 text-2xl" style="max-width: 700px; margin: 0 auto; font-family: 'Playfair Display', serif;">
-      <li class="flex items-start gap-4 animate-fade-right">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> O que é brigadeiro gourmet?
+    <ul style="list-style: none; padding: 0; font-size: 22px; text-align: left; max-width: 700px; margin: 0 auto;">
+      <li style="margin-bottom: 20px;">
+        <span class="animated-arrow">➔</span> O que é brigadeiro gourmet?
       </li>
-      <li class="flex items-start gap-4 animate-fade-left">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> Itens essenciais para a produção de brigadeiros;
+      <li style="margin-bottom: 20px;">
+        <span class="animated-arrow">➔</span> Itens essenciais para a produção de brigadeiros;
       </li>
-      <li class="flex items-start gap-4 animate-fade-right">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> Quanto você pode ganhar vendendo brigadeiros gourmet;
+      <li style="margin-bottom: 20px;">
+        <span class="animated-arrow">➔</span> Quanto você pode ganhar vendendo brigadeiros gourmet;
       </li>
-      <li class="flex items-start gap-4 animate-fade-left">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> As melhores receitas de brigadeiro gourmet;
+      <li style="margin-bottom: 20px;">
+        <span class="animated-arrow">➔</span> As melhores receitas de brigadeiro gourmet;
       </li>
-      <li class="flex items-start gap-4 animate-fade-right">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> Mais de 20 receitas deliciosas para aprender e lucrar;
+      <li style="margin-bottom: 20px;">
+        <span class="animated-arrow">➔</span> Mais de 20 receitas deliciosas para você aprender e lucrar;
       </li>
-      <li class="flex items-start gap-4 animate-fade-left">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> Como precificar seus brigadeiros corretamente.
+      <li style="margin-bottom: 20px;">
+        <span class="animated-arrow">➔</span> Como precificar seus brigadeiros corretamente.
       </li>
-      <li class="flex items-start gap-4 animate-fade-right">
-        <span class="text-yellow-400 text-4xl animate-pulse">➔</span> E muito mais...
+      <li>
+        <span class="animated-arrow">➔</span> E muito mais...
       </li>
     </ul>
 
-    <!-- Botão de compra -->
-    <div class="mt-12">
-      <a href="URL-DO-CHECKOUT" class="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-black font-bold py-4 px-10 rounded-full text-2xl animate-bounce hover:scale-105 transition transform duration-500">
-        GARANTIR MEU E-BOOK AGORA
-      </a>
-    </div>
+    <!-- Botão de compra pulsando com brilho -->
+    <a href="URL-DO-CHECKOUT" class="pulse-button" style="display: inline-block; margin-top: 50px; padding: 20px 45px; font-size: 24px; color: white; background: linear-gradient(90deg, #FFD700, #FFC300); border: none; border-radius: 50px; text-decoration: none;">
+      GARANTIR MEU E-BOOK AGORA
+    </a>
 
   </div>
 </section>
 
-<!-- Animações CSS -->
+<!-- Animações -->
 <style>
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fade-right {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes fade-left {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+/* Botão com efeito de brilho e pulsação */
+.pulse-button {
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s infinite;
 }
 
-.animate-fade-up { animation: fade-up 1s ease forwards; }
-.animate-fade-right { animation: fade-right 1s ease forwards; }
-.animate-fade-left { animation: fade-left 1s ease forwards; }
-.animate-pulse { animation: pulse 2s infinite; }
+.pulse-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+/* Setas douradas animadas */
+.animated-arrow {
+  color: #FFD700;
+  font-size: 30px;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+/* Animações keyframes */
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
 </style>
