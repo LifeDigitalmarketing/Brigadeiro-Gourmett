@@ -173,7 +173,7 @@
 </html>
 
 <!-- Seção 2: Benefícios do E-book Brigadeiro Gourmet -->
-<section style="position: relative; background-image: url('B-GOURMET-BLOCO-02-1jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 20px;">
+<section style="position: relative; background-image: url('B-GOURMET-BLOCO-02.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 20px; font-family: 'Poppins', sans-serif;">
 
   <!-- Degradê em cima -->
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, black, transparent);"></div>
@@ -185,38 +185,40 @@
   <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
 
     <!-- Mockup do E-book MAIOR -->
-    <img src="IMG-B-GOURMET-01-768x768.png" alt="Mockup do E-book" style="max-width: 480px; width: 90%; margin-bottom: 40px;">
+    <img src="IMG-B-GOURMET-01-768x768.png" alt="Mockup do E-book" style="max-width: 480px; width: 90%; margin-bottom: 40px; animation: fadeIn 2s ease-in-out;">
 
     <!-- Título da seção -->
-    <h2 style="font-size: 38px; margin-bottom: 30px;">VEJA O QUE VOCÊ VAI RECEBER NESTE E-BOOK</h2>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 30px; animation: fadeUp 1.5s ease;">
+      VEJA O QUE VOCÊ VAI RECEBER NESTE <span style="color: #FFC107;">E-BOOK PREMIUM</span>
+    </h2>
 
     <!-- Lista de benefícios -->
     <ul style="list-style: none; padding: 0; font-size: 22px; text-align: left; max-width: 700px; margin: 0 auto;">
-      <li style="margin-bottom: 20px;">
-        <span class="animated-arrow">➔</span> O que é brigadeiro gourmet?
+      <li style="margin-bottom: 20px; animation: slideRight 1s ease;">
+        <span class="animated-arrow">➔</span> A verdadeira diferença entre um <span style="color: #FFC107;">brigadeiro comum</span> e um <span style="color: #FFC107;">brigadeiro gourmet</span> irresistível.
       </li>
-      <li style="margin-bottom: 20px;">
-        <span class="animated-arrow">➔</span> Itens essenciais para a produção de brigadeiros;
+      <li style="margin-bottom: 20px; animation: slideLeft 1.2s ease;">
+        <span class="animated-arrow">➔</span> Descubra os <span style="color: #FFC107;">ingredientes secretos</span> que transformam uma receita simples em um negócio lucrativo.
       </li>
-      <li style="margin-bottom: 20px;">
-        <span class="animated-arrow">➔</span> Quanto você pode ganhar vendendo brigadeiros gourmet;
+      <li style="margin-bottom: 20px; animation: slideRight 1.4s ease;">
+        <span class="animated-arrow">➔</span> Entenda como calcular o <span style="color: #FFC107;">preço ideal</span> para maximizar seus lucros de forma inteligente.
       </li>
-      <li style="margin-bottom: 20px;">
-        <span class="animated-arrow">➔</span> As melhores receitas de brigadeiro gourmet;
+      <li style="margin-bottom: 20px; animation: slideLeft 1.6s ease;">
+        <span class="animated-arrow">➔</span> As <span style="color: #FFC107;">melhores receitas exclusivas</span> para surpreender qualquer cliente.
       </li>
-      <li style="margin-bottom: 20px;">
-        <span class="animated-arrow">➔</span> Mais de 20 receitas deliciosas para você aprender e lucrar;
+      <li style="margin-bottom: 20px; animation: slideRight 1.8s ease;">
+        <span class="animated-arrow">➔</span> Técnicas para vender sem parecer vendedor: crie desejo e <span style="color: #FFC107;">aumente suas vendas</span> organicamente.
       </li>
-      <li style="margin-bottom: 20px;">
-        <span class="animated-arrow">➔</span> Como precificar seus brigadeiros corretamente.
+      <li style="margin-bottom: 20px; animation: slideLeft 2s ease;">
+        <span class="animated-arrow">➔</span> Dicas práticas para <span style="color: #FFC107;">alavancar seus lucros</span> na Páscoa e além.
       </li>
-      <li>
-        <span class="animated-arrow">➔</span> E muito mais...
+      <li style="animation: slideUp 2.2s ease;">
+        <span class="animated-arrow">➔</span> E ainda: <span style="color: #FFC107;">bônus especiais</span> que vão te colocar passos à frente da concorrência.
       </li>
     </ul>
 
     <!-- Botão de compra pulsando com brilho -->
-    <a href="URL-DO-CHECKOUT" class="pulse-button" style="display: inline-block; margin-top: 50px; padding: 20px 45px; font-size: 24px; color: white; background: linear-gradient(90deg, #FFD700, #FFC300); border: none; border-radius: 50px; text-decoration: none;">
+    <a href="URL-DO-CHECKOUT" class="pulse-button" style="display: inline-block; margin-top: 50px; padding: 20px 45px; font-size: 24px; color: white; background: linear-gradient(90deg, #FFD700, #FFC300); border: none; border-radius: 50px; text-decoration: none; font-family: 'Poppins', sans-serif; animation: bounceIn 2s ease;">
       GARANTIR MEU E-BOOK AGORA
     </a>
 
@@ -225,11 +227,14 @@
 
 <!-- Animações -->
 <style>
+/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
 /* Botão com efeito de brilho e pulsação */
 .pulse-button {
   position: relative;
   overflow: hidden;
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite, glow 3s infinite alternate;
 }
 
 .pulse-button::after {
@@ -239,9 +244,9 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
   transform: skewX(-20deg);
-  animation: shine 2s infinite;
+  animation: shine 2.5s infinite;
 }
 
 /* Setas douradas animadas */
@@ -249,37 +254,59 @@
   color: #FFD700;
   font-size: 30px;
   display: inline-block;
-  animation: bounce 2s infinite;
+  animation: bounceArrow 2s infinite;
 }
 
-/* Animações keyframes */
+/* Animações Keyframes */
 @keyframes shine {
-  0% {
-    left: -75%;
-  }
-  100% {
-    left: 125%;
-  }
+  0% { left: -75%; }
+  100% { left: 125%; }
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
-  }
+@keyframes glow {
+  from { box-shadow: 0 0 10px #FFD700; }
+  to { box-shadow: 0 0 20px #FFC300; }
+}
+
+@keyframes bounceArrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); }
 }
 </style>
