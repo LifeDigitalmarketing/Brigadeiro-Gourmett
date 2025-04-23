@@ -404,3 +404,112 @@
   }
 }
 </style>
+
+<!-- SEÇÃO 4 - DEPOIMENTOS DE CLIENTES -->
+<section class="relative bg-black py-16 overflow-hidden" style="background-image: url('B-GOURMET-BLOCO-02-1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <!-- Degradê no Topo -->
+  <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Título da Seção -->
+    <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="1200">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white">
+        DEPOIMENTOS DE <span class="text-yellow-500">CLIENTES</span>
+      </h2>
+      <p class="mt-4 text-lg md:text-xl text-gray-300">
+        Confira agora mesmo o que nossos clientes estão falando sobre o <strong>E-Book Brigadeiro Gourmet</strong>, e a satisfação nos resultados que estão conquistando.
+      </p>
+    </div>
+
+    <!-- Prints dos Depoimentos (3 slots) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">
+      <img src="Imagem-do-WhatsApp-de-2023-02-06-as-15.56.18.jpg" alt="Depoimento Cliente 1" class="rounded-2xl shadow-xl">
+      <img src="Imagem-do-WhatsApp-de-2023-02-06-as-15.59.09.jpg" alt="Depoimento Cliente 2" class="rounded-2xl shadow-xl">
+      <img src="Imagem-do-WhatsApp-de-2023-02-06-as-16.02.32.jpg" alt="Depoimento Cliente 3" class="rounded-2xl shadow-xl">
+    </div>
+
+    <!-- Depoimentos Fakes ao Vivo -->
+    <div id="depoimentosAoVivo" class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-2xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200">
+      <h3 class="text-center text-yellow-400 text-xl font-bold mb-6">Depoimentos ao Vivo</h3>
+      <div id="mensagens" class="space-y-3 text-white text-sm"></div>
+    </div>
+  </div>
+
+  <!-- Degradê no Rodapé -->
+  <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-transparent to-black"></div>
+</section>
+
+<!-- SCRIPT PARA DEPOIMENTOS AO VIVO COM SOM -->
+<script>
+  const mensagens = [
+    "Ana Souza acabou de comprar o E-Book!",
+    "Pedro Lima faturou R$ 1.200 em uma semana!",
+    "Mariana Rocha disse: Nunca foi tão fácil vender doces!",
+    "Lucas Ferreira garantiu sua vaga agora!",
+    "Júlia Martins começou hoje e já vendeu 10 brigadeiros!",
+    "Gabriel Silva: Melhor investimento do ano!",
+    "Larissa Santos faturou R$ 890 no primeiro mês!",
+    "Mateus Costa acabou de comprar!",
+    "Isabela Gomes garantiu seu acesso com desconto!",
+    "Felipe Almeida fez a primeira venda em 2 dias!",
+    "Letícia Castro: Brigadeiros maravilhosos!",
+    "Bruno Cardoso garantiu a vaga dele!",
+    "Carolina Pires dobrou a renda em 15 dias!",
+    "Eduardo Ramos: Receita top demais!",
+    "Beatriz Lima acaba de adquirir!"
+  ];
+
+  let vagasRestantes = 20;
+
+  const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-bell-notification-933.mp3');
+
+  function adicionarMensagem() {
+    const container = document.getElementById('mensagens');
+    const novaMensagem = document.createElement('div');
+
+    if (Math.random() < 0.4 && vagasRestantes > 1) {
+      vagasRestantes--;
+      novaMensagem.innerHTML = `<span class="text-green-400 font-bold animate-pulse">[ALERTA] ${vagasRestantes} vagas restantes!</span>`;
+    } else {
+      const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+      novaMensagem.innerHTML = `<div class="mensagem-entrada">${mensagemAleatoria}</div>`;
+    }
+
+    container.appendChild(novaMensagem);
+
+    if (container.children.length > 8) {
+      container.removeChild(container.children[0]);
+    }
+
+    audio.play();
+  }
+
+  setInterval(adicionarMensagem, 5000);
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.05); }
+    }
+    .animate-pulse {
+      animation: pulse 1.5s infinite;
+    }
+    .mensagem-entrada {
+      animation: fadeIn 1s ease-out;
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+<!-- BIBLIOTECA AOS PARA ANIMAÇÕES -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
