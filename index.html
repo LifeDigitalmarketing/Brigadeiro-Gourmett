@@ -523,158 +523,151 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(#000000, #f1c40f);
+      background: url('B-GOURMET-BLOCO-PRECO.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
+    }
+    .container {
       text-align: center;
-      overflow-x: hidden;
+      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.7);
     }
-    .top-section {
-      padding: 20px;
-    }
-    .top-section img {
-      width: 250px;
-      margin-bottom: 20px;
-    }
-    .special-offer {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 0 20px;
-    }
-    .special-offer h1 {
+    .titulo {
       font-size: 28px;
+      font-weight: bold;
       margin-bottom: 10px;
     }
-    .special-offer p {
-      background: #f1c40f;
+    .subtitulo {
+      font-size: 16px;
+      background-color: orange;
       color: black;
-      font-weight: bold;
-      display: inline-block;
       padding: 5px 10px;
-      border-radius: 5px;
+      display: inline-block;
       margin-bottom: 20px;
+      border-radius: 5px;
     }
-    .countdown {
+    .timer {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 15px;
       margin-bottom: 20px;
     }
-    .countdown div {
-      background: #222;
+    .timer div {
+      background: black;
       padding: 10px;
-      border-radius: 8px;
-    }
-    .price {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-    .price strong {
-      font-size: 40px;
-      color: #f1c40f;
-    }
-    .btn-comprar {
-      background: #f1c40f;
-      color: #000;
-      font-weight: bold;
-      padding: 15px 30px;
-      text-decoration: none;
       border-radius: 10px;
-      font-size: 18px;
+    }
+    .timer span {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .preco-antigo {
+      text-decoration: line-through;
+      font-size: 16px;
+    }
+    .preco-novo {
+      font-size: 36px;
+      font-weight: bold;
+      color: yellow;
+      margin: 10px 0;
+    }
+    .botao-comprar {
+      background: orange;
+      color: black;
+      padding: 15px 30px;
+      border: none;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      text-decoration: none;
       display: inline-block;
-      margin: 15px 0;
     }
     .infos {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
+      margin-bottom: 20px;
       flex-wrap: wrap;
-      margin-top: 15px;
-      font-size: 14px;
     }
     .infos div {
+      font-size: 12px;
       display: flex;
       align-items: center;
       gap: 5px;
     }
-    .garantia-section img {
-      width: 250px;
-      margin: 30px auto;
+    .selo {
+      margin-top: 30px;
     }
-    .whatsapp-button {
+    .selo img {
+      width: 150px;
+    }
+    .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25D366;
-      padding: 10px;
-      border-radius: 50%;
     }
-    .whatsapp-button img {
-      width: 40px;
-      height: 40px;
+    .whatsapp img {
+      width: 60px;
     }
   </style>
 </head>
-<body>  <div class="top-section">
-    <img src="IMG-B-GOURMET-03-768x768.webp" alt="Brigadeiro Gourmet">
-  </div>  <div class="special-offer">
-    <h1>OFERTA ESPECIAL</h1>
-    <p>PROMOÇÃO ENCERRA EM POUCOS MINUTOS</p><div class="countdown">
+<body>
+  <div class="container">
+    <img src="IMG-B-GOURMET-03-768x768.webp" alt="Produto" style="width:200px; margin-bottom:20px;">
+    <div class="titulo">OFERTA ESPECIAL</div>
+    <div class="subtitulo">PROMOÇÃO ENCERRA EM POUCOS MINUTOS</div><div class="timer">
   <div>
-    <span id="hours">01</span><br>Horas
+    <span id="horas">01</span>
+    Horas
   </div>
   <div>
-    <span id="minutes">15</span><br>Minutos
+    <span id="minutos">15</span>
+    Minutos
   </div>
   <div>
-    <span id="seconds">00</span><br>Segundos
+    <span id="segundos">00</span>
+    Segundos
   </div>
 </div>
 
-<div class="price">
-  De <s>R$147,99</s> por apenas<br>
-  <strong>R$29,90</strong>
-</div>
+<div class="preco-antigo">De R$147,99 por apenas</div>
+<div class="preco-novo">R$29,90</div>
 
-<a href="URL_DO_LINK_DE_COMPRA" class="btn-comprar">COMPRAR AGORA</a>
-<br>
-<a href="URL_DO_DOWNLOAD" class="btn-comprar" style="background-color:#000;color:#f1c40f;">BAIXAR PRÉVIA</a>
+<a href="URL_DO_LINK_DE_COMPRA" class="botao-comprar">COMPRAR AGORA</a>
 
 <div class="infos">
-  <div>✅ 7 dias de garantia
-  </div>
-  <div>✅ Acesso imediato
-  </div>
-  <div>✅ Pagamento 100% seguro
-  </div>
+  <div>✅ 7 dias de garantia</div>
+  <div>✅ Acesso imediato</div>
+  <div>✅ Pagamento seguro</div>
 </div>
 
-  </div>  <div class="garantia-section">
-    <img src="ICONES-REGUA-1-1.png" alt="Garantia">
-  </div>  <a class="whatsapp-button" href="https://wa.me/SEUNUMEROWHATSAPP">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a><script>
-// Cronômetro de 1h15m
-let countDownDate = new Date().getTime() + (75 * 60 * 1000);
+<a href="URL_DO_DOWNLOAD" style="color: white; text-decoration: underline;">Baixar Prévia Gratuita</a>
 
-let x = setInterval(function() {
-  let now = new Date().getTime();
-  let distance = countDownDate - now;
+<div class="selo">
+  <img src="SELO-BLOCO-08-3-768x768.png" alt="Selo de Garantia">
+</div>
 
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  </div>  <a class="whatsapp" href="https://wa.me/SEUNUMEROWHATSAPP" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Whatsapp">
+  </a>  <script>
+    let totalSegundos = 75 * 60;
 
-  document.getElementById("hours").innerHTML = (hours < 10 ? "0" : "") + hours;
-  document.getElementById("minutes").innerHTML = (minutes < 10 ? "0" : "") + minutes;
-  document.getElementById("seconds").innerHTML = (seconds < 10 ? "0" : "") + seconds;
+    function atualizarTimer() {
+      const horas = Math.floor(totalSegundos / 3600);
+      const minutos = Math.floor((totalSegundos % 3600) / 60);
+      const segundos = totalSegundos % 60;
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("hours").innerHTML = "00";
-    document.getElementById("minutes").innerHTML = "00";
-    document.getElementById("seconds").innerHTML = "00";
-  }
-}, 1000);
-</script></body>
+      document.getElementById('horas').textContent = String(horas).padStart(2, '0');
+      document.getElementById('minutos').textContent = String(minutos).padStart(2, '0');
+      document.getElementById('segundos').textContent = String(segundos).padStart(2, '0');
+
+      if (totalSegundos > 0) {
+        totalSegundos--;
+      }
+    }
+
+    setInterval(atualizarTimer, 1000);
+  </script></body>
 </html>
