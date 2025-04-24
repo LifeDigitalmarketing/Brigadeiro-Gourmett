@@ -539,12 +539,12 @@
       position: relative;
     }
     .mockup img {
-      width: 300px; /* Ajuste manual */
+      width: 300px;
       max-width: 90%;
       animation: fadeInDown 1s ease;
     }
     .offer-box {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+      background: rgba(0, 0, 0, 0.6); /* Agora é preto semi-transparente */
       border-radius: 20px;
       padding: 30px 20px;
       margin: 30px auto 20px;
@@ -570,8 +570,9 @@
       margin-bottom: 20px;
     }
     .timer-box {
-      background: #FFD700;
-      color: #000;
+      background: #000; /* Fundo preto */
+      border: 2px solid #FFD700; /* Borda dourada */
+      color: #FFD700;
       font-size: 20px;
       font-weight: bold;
       padding: 10px;
@@ -589,6 +590,7 @@
       font-size: 12px;
       margin-top: 5px;
       font-weight: 600;
+      color: #FFD700;
     }
     .timer-separator {
       font-size: 24px;
@@ -624,11 +626,11 @@
       transform: scale(1.05);
     }
     .icons img {
-      width: 200px; /* Ajuste manual */
+      width: 200px;
       margin-top: 20px;
     }
     .garantia img {
-      width: 150px; /* Ajuste manual */
+      width: 150px;
       margin-top: 20px;
     }
     .whatsapp-btn {
@@ -695,49 +697,21 @@
     <a href="#previa" class="btn-previa">Baixar Prévia Gratuita</a>
 
     <div class="icons">
-      <img src="SICONES-REGUA-1-1.png" alt="Ícones de Garantia, Pagamento Seguro, etc.">
+      <img src="ICONES-REGUA-1-1.png" alt="Ícones Segurança">
+    </div>
+
+    <div class="garantia">
+      <img src="SELO-BLOCO-08-3-768x768.png" alt="Selo Garantia">
     </div>
 
   </div>
-
-  <div class="garantia">
-    <img src="SELO-BLOCO-08-3-768x768.png" alt="Selo de Garantia 7 Dias">
-  </div>
-
 </div>
 
-<!-- Botão WhatsApp -->
-<a class="whatsapp-btn" href="https://api.whatsapp.com/send?phone=5541987256736&text=Tenho%20interesse%20no%20E-book%20Brigadeiro%20Gourmet!" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="Fale conosco pelo WhatsApp">
-</a>
-
-<!-- SCRIPT do Timer -->
-<script>
-  function startTimer(duration) {
-    let timer = duration, hours, minutes, seconds;
-    setInterval(function () {
-      hours = parseInt(timer / 3600, 10);
-      minutes = parseInt((timer % 3600) / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-
-      hours = hours < 10 ? "0" + hours : hours;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = minutes;
-      document.getElementById('seconds').textContent = seconds;
-
-      if (--timer < 0) {
-        timer = duration; // reinicia se quiser loop
-      }
-    }, 1000);
-  }
-  window.onload = function () {
-    const oneHourFifteenMin = 4500; // 1h15min em segundos
-    startTimer(oneHourFifteenMin);
-  };
-</script>
+<div class="whatsapp-btn">
+  <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO" target="_blank">
+    <img src="SUA_IMAGEM_WHATSAPP_AQUI" alt="Whatsapp">
+  </a>
+</div>
 
 </body>
 </html>
