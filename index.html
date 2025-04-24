@@ -625,36 +625,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dúvidas Frequentes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: url('B-GOURMET-BLOCO-03-1.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
 
     .faq-section {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.6); /* Mais transparência */
       padding: 60px 20px;
       max-width: 800px;
       margin: auto;
-      border-radius: 10px;
+      border-radius: 12px;
+      backdrop-filter: blur(3px);
     }
 
     .faq-title {
       text-align: center;
-      font-size: 32px;
-      color: #ffb300;
-      font-weight: bold;
-      margin-bottom: 40px;
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      color: #ffcc00;
+      margin-bottom: 50px;
     }
 
     .faq-item {
-      border-top: 1px solid #ffcc80;
+      border-top: 1px solid #ffd54f;
       padding: 20px 0;
       cursor: pointer;
       transition: background 0.3s ease;
@@ -673,9 +675,9 @@
 
     .faq-question::before {
       content: '▶';
-      color: #ffb300;
+      color: #ffcc00;
       margin-right: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .faq-item.open .faq-question::before {
@@ -685,16 +687,18 @@
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.6s ease, opacity 0.6s ease;
       opacity: 0;
+      transform: translateY(-10px);
+      transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
       font-size: 16px;
-      line-height: 1.5;
       margin-top: 10px;
+      line-height: 1.6;
     }
 
     .faq-item.open .faq-answer {
       max-height: 300px;
       opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -744,7 +748,6 @@
         Sim! Você tem garantia de 7 dias para testar o material. Se não gostar, devolvemos seu dinheiro. Sem burocracia.
       </div>
     </div>
-
   </section>
 
   <script>
