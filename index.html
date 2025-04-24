@@ -626,62 +626,59 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dúvidas Frequentes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Elegante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Lora', serif;
       background: url('B-GOURMET-BLOCO-03-1.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
 
     .faq-section {
-      background: rgba(0, 0, 0, 0.6); /* Mais transparência */
-      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 80px 20px;
       max-width: 800px;
       margin: auto;
-      border-radius: 12px;
-      backdrop-filter: blur(3px);
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      transition: all 0.5s ease-in-out;
     }
 
     .faq-title {
+      font-size: 32px;
       text-align: center;
-      font-size: 36px;
       font-family: 'Playfair Display', serif;
-      color: #ffcc00;
+      color: #f8d878;
       margin-bottom: 50px;
+      letter-spacing: 1px;
     }
 
     .faq-item {
-      border-top: 1px solid #ffd54f;
-      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 18px 0;
       cursor: pointer;
       transition: background 0.3s ease;
-    }
-
-    .faq-item:hover {
-      background: rgba(255, 255, 255, 0.05);
     }
 
     .faq-question {
       display: flex;
       align-items: center;
-      font-size: 18px;
+      justify-content: space-between;
+      font-size: 15px;
       font-weight: 600;
+      color: #fdfdfd;
+      transition: color 0.3s ease;
     }
 
-    .faq-question::before {
-      content: '▶';
-      color: #ffcc00;
-      margin-right: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.open .faq-question::before {
-      transform: rotate(90deg);
+    .faq-icon {
+      transition: transform 0.4s ease;
+      font-size: 18px;
+      color: #f8d878;
     }
 
     .faq-answer {
@@ -689,63 +686,88 @@
       overflow: hidden;
       opacity: 0;
       transform: translateY(-10px);
-      transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
-      font-size: 16px;
+      filter: blur(2px);
+      transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+      font-size: 14px;
+      color: #ddd;
+      line-height: 1.7;
       margin-top: 10px;
-      line-height: 1.6;
     }
 
     .faq-item.open .faq-answer {
-      max-height: 300px;
+      max-height: 400px;
       opacity: 1;
       transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(90deg);
     }
   </style>
 </head>
 <body>
 
   <section class="faq-section">
-    <h1 class="faq-title">DÚVIDAS FREQUENTES</h1>
+    <h1 class="faq-title">Dúvidas Frequentes</h1>
 
     <div class="faq-item open">
-      <div class="faq-question">O que é isso tudo?</div>
+      <div class="faq-question">
+        O que é isso tudo?
+        <span class="faq-icon">▶</span>
+      </div>
       <div class="faq-answer">
-        É um guia com receitas deliciosas, validadas por quem já lucra vendendo doces gourmet. Ideal pra quem quer começar do zero ou aprimorar sua produção de brigadeiros lucrativos.
+        É um guia validado por centenas de pessoas que começaram do zero e agora vivem vendendo doces. Ideal para quem quer independência financeira de forma simples e lucrativa.
       </div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Como eu vou receber esse guia?</div>
+      <div class="faq-question">
+        Como eu vou receber esse guia?
+        <span class="faq-icon">▶</span>
+      </div>
       <div class="faq-answer">
-        Assim que a sua compra for aprovada, você receberá um e-mail com acesso imediato ao guia completo. Tudo 100% online, sem enrolação.
+        Você receberá o guia imediatamente por e-mail assim que sua compra for aprovada. É 100% digital, então você pode acessar no celular, tablet ou computador.
       </div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Em quanto tempo vou ter resultados com o que vou aprender nesse programa?</div>
+      <div class="faq-question">
+        Em quanto tempo vou ter resultados com o que vou aprender nesse programa?
+        <span class="faq-icon">▶</span>
+      </div>
       <div class="faq-answer">
-        Muitos alunos já começaram a vender em menos de 7 dias. Aplicando o que está no guia, você pode ver resultados rápidos — mesmo sem experiência anterior.
+        Com dedicação, é possível ver resultados em menos de 7 dias. O guia é direto ao ponto, sem enrolação, para acelerar seus primeiros lucros.
       </div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">E se eu não tiver tempo para estudar?</div>
+      <div class="faq-question">
+        E se eu não tiver tempo para estudar?
+        <span class="faq-icon">▶</span>
+      </div>
       <div class="faq-answer">
-        As receitas e orientações são diretas ao ponto. Mesmo que você tenha pouco tempo por dia, dá pra avançar em passos simples, no seu ritmo.
+        As aulas são simples, práticas e feitas para encaixar na sua rotina. Mesmo com poucos minutos por dia, você já consegue avançar.
       </div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Como vou receber acesso ao método?</div>
+      <div class="faq-question">
+        Como vou receber acesso ao método?
+        <span class="faq-icon">▶</span>
+      </div>
       <div class="faq-answer">
-        O acesso é liberado automaticamente por e-mail com um link exclusivo. Simples, rápido e prático.
+        Após o pagamento, você receberá um e-mail com seu acesso exclusivo. Tudo automático e fácil.
       </div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Existe alguma garantia que o programa funciona?</div>
+      <div class="faq-question">
+        Existe alguma garantia que o programa funciona?
+        <span class="faq-icon">▶</span>
+      </div>
       <div class="faq-answer">
-        Sim! Você tem garantia de 7 dias para testar o material. Se não gostar, devolvemos seu dinheiro. Sem burocracia.
+        Sim. Você pode testar por 7 dias e, se não gostar por qualquer motivo, devolvemos 100% do seu dinheiro. Sem letras miúdas.
       </div>
     </div>
   </section>
