@@ -628,12 +628,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ Elegante</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Cormorant Garamond', serif;
-      background: url('B-GOURMET-BLOCO-03-1.jpg') no-repeat center center fixed;
+      font-family: 'Lora', serif;
+      background: url('sua-imagem.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
@@ -646,13 +646,14 @@
       border-radius: 14px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(5px);
+      transition: all 0.5s ease-in-out;
     }
 
     .faq-title {
       font-size: 32px;
       text-align: center;
       font-family: 'Playfair Display', serif;
-      color: #d4af37;
+      color: #f8d878;
       margin-bottom: 50px;
       letter-spacing: 1px;
     }
@@ -661,6 +662,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       padding: 18px 0;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     .faq-question {
@@ -669,14 +671,14 @@
       justify-content: space-between;
       font-size: 15px;
       font-weight: 600;
-      color: #d4af37;
-      font-family: 'Cinzel', serif;
+      color: #fdfdfd;
+      transition: color 0.3s ease;
     }
 
     .faq-icon {
       transition: transform 0.4s ease;
       font-size: 18px;
-      color: #d4af37;
+      color: #f8d878;
     }
 
     .faq-answer {
@@ -690,7 +692,6 @@
       color: #ddd;
       line-height: 1.7;
       margin-top: 10px;
-      font-family: 'Cormorant Garamond', serif;
     }
 
     .faq-item.open .faq-answer {
