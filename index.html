@@ -621,3 +621,144 @@
     O código de defesa do consumidor (Art. 49) garante 7 dias para solicitar reembolso em caso de insatisfação com o produto.
   </p>
 </section>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dúvidas Frequentes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('B-GOURMET-BLOCO-03-1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .faq-section {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .faq-title {
+      text-align: center;
+      font-size: 32px;
+      color: #ffb300;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      border-top: 1px solid #ffcc80;
+      padding: 20px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .faq-question::before {
+      content: '▶';
+      color: #ffb300;
+      margin-right: 10px;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question::before {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, opacity 0.6s ease;
+      opacity: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="faq-section">
+    <h1 class="faq-title">DÚVIDAS FREQUENTES</h1>
+
+    <div class="faq-item open">
+      <div class="faq-question">O que é isso tudo?</div>
+      <div class="faq-answer">
+        É um guia com receitas deliciosas, validadas por quem já lucra vendendo doces gourmet. Ideal pra quem quer começar do zero ou aprimorar sua produção de brigadeiros lucrativos.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Como eu vou receber esse guia?</div>
+      <div class="faq-answer">
+        Assim que a sua compra for aprovada, você receberá um e-mail com acesso imediato ao guia completo. Tudo 100% online, sem enrolação.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Em quanto tempo vou ter resultados com o que vou aprender nesse programa?</div>
+      <div class="faq-answer">
+        Muitos alunos já começaram a vender em menos de 7 dias. Aplicando o que está no guia, você pode ver resultados rápidos — mesmo sem experiência anterior.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">E se eu não tiver tempo para estudar?</div>
+      <div class="faq-answer">
+        As receitas e orientações são diretas ao ponto. Mesmo que você tenha pouco tempo por dia, dá pra avançar em passos simples, no seu ritmo.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Como vou receber acesso ao método?</div>
+      <div class="faq-answer">
+        O acesso é liberado automaticamente por e-mail com um link exclusivo. Simples, rápido e prático.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Existe alguma garantia que o programa funciona?</div>
+      <div class="faq-answer">
+        Sim! Você tem garantia de 7 dias para testar o material. Se não gostar, devolvemos seu dinheiro. Sem burocracia.
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        faqItems.forEach(i => {
+          if (i !== item) i.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
