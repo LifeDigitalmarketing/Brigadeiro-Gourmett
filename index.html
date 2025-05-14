@@ -579,7 +579,50 @@
     </style>
 
     <div style="text-align: center; margin: 30px 0;">
-      <a href="https://pay.kiwify.com.br/YOg1UO1" style="background-color: #FFD700; color: black; font-weight: bold; padding: 15px 30px; border-radius: 30px; text-decoration: none; display: inline-block; animation: pulse 2s infinite;">COMPRAR AGORA</a>
+      <style>
+.botao-brilhante {
+  position: relative;
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.botao-brilhante::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: brilhoBotao 2s infinite;
+  z-index: 2;
+}
+
+@keyframes brilhoBotao {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+</style>
+
+<!-- Botão com classe aplicada -->
+<a href="https://pay.kiwify.com.br/YOg1UO1" class="botao-brilhante">COMPRAR AGORA</a>
       <br><br>
       <a href="https://plrpremium.net/wp-content/uploads/2023/02/brigadeiro-versao-final.2-1-12.pdf" style="background-color: #FFD700; color: black; font-weight: bold; padding: 12px 26px; border-radius: 30px; text-decoration: none; display: inline-block;">Baixar Prévia Gratuita</a>
     </div>
